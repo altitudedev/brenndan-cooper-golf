@@ -61,7 +61,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         headline="Let’s Talk About Your Game"
         sub="Phone, email, or the booking calendar — pick what works. Brenndan and the team get back fast."
-        image="/uploads/2026/02/facility3.jpg"
+        image="/uploads/2025/12/480830633_2875408172646768_479899102765999617_n.jpg"
         primaryCta={{ label: 'Book Now', href: site.bookNowUrl, external: true }}
         secondaryCta={{ label: 'See Programs', href: '/coaching' }}
       />
