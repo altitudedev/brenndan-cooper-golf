@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+*.log
+.env*.local
+.DS_Store
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# scrape artifacts (kept locally, not shipped)
+assets-staging
+scrape
