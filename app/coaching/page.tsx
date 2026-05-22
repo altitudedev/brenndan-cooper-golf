@@ -165,12 +165,12 @@ export default function CoachingPage() {
           }}
         />
         <Grain opacity={0.07} />
-        {/* Top curve so it tucks under the previous white section nicely */}
+        {/* Top curve — fills with bone to match the section above. */}
         <svg
           aria-hidden
           viewBox="0 0 1000 60"
           preserveAspectRatio="none"
-          className="absolute left-0 right-0 top-[-1px] z-[3] h-[50px] w-full fill-white"
+          className="absolute left-0 right-0 top-[-1px] z-[3] h-[50px] w-full fill-bone"
         >
           <path d="M0,0v40C200,60,400,20,500,18C600,16,800,55,1000,40V0H0z" />
         </svg>

@@ -42,7 +42,7 @@ export default function AboutPage() {
         eyebrow="About"
         headline="Meet Brenndan"
         sub="Two-time Midwest PGA Teacher of the Year, Golf Digest Best Young Teacher in America, and Director of Instruction for serious competitive golfers."
-        image="/uploads/2025/12/fb5a20481c79f848dd7d0d1b66b83a20_l.jpg"
+        image="/uploads/2025/12/471412231_18345920869179739_9094618377442278167_n.jpg"
         primaryCta={{ label: 'Book Now', href: site.bookNowUrl, external: true }}
         secondaryCta={{ label: 'See Programs', href: '/coaching' }}
       />

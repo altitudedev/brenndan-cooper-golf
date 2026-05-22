@@ -63,20 +63,20 @@ export default function Hero({
       {/* Background photo with parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y: imageY, x: mouseX }}>
         <div className="absolute -inset-12">
-          <Image src={image} alt="" fill priority sizes="120vw" style={{ objectFit: 'cover' }} className="opacity-55" />
+          <Image src={image} alt="" fill priority sizes="120vw" style={{ objectFit: 'cover' }} className="opacity-90" />
         </div>
       </motion.div>
 
-      {/* Aurora orbs */}
-      <Aurora tone="mixed" intensity={0.9} className="z-[1]" />
+      {/* Aurora orbs — softer so the photo reads */}
+      <Aurora tone="mixed" intensity={0.5} className="z-[1]" />
 
-      {/* Gradient veil */}
+      {/* Gradient veil — lighter so the photo reads through */}
       <div
         aria-hidden
         className="absolute inset-0 z-[2]"
         style={{
           background:
-            'linear-gradient(220deg, rgba(7,34,59,0.72) 0%, rgba(4,22,39,0.78) 50%, rgba(4,22,39,0.95) 100%)',
+            'linear-gradient(200deg, rgba(7,34,59,0.45) 0%, rgba(4,22,39,0.55) 55%, rgba(4,22,39,0.85) 100%)',
         }}
       />
 
@@ -157,22 +157,6 @@ export default function Hero({
           )}
         </div>
 
-        {/* Scroll cue */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.7 }}
-          className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/55 md:flex"
-        >
-          <span className="block h-px w-10 bg-white/40" />
-          <motion.span
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            Scroll
-          </motion.span>
-          <span className="block h-px w-10 bg-white/40" />
-        </motion.div>
       </motion.div>
     </section>
   );

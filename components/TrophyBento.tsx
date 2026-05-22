@@ -18,15 +18,15 @@ type Tile = {
 
 /**
  * Layout math (sm: 4 columns):
- *   Featured (col-span-2 row-span-2)  = 4 cells
- *   Tall    (row-span-2)              = 2 cells
- *   Wide    (col-span-2)              = 2 cells   ×2 = 4 cells
- *   Singles (1×1)                     = 1 cell    ×6 = 6 cells
- *                                      ─────────
- *                                       16 cells = 4 rows × 4 cols  ✓ no orphan
+ *   Featured  (col-span-2 row-span-2)  = 4 cells
+ *   Tall ×2   (row-span-2 each)        = 4 cells
+ *   Wide ×2   (col-span-2 each)        = 4 cells
+ *   Singles ×8 (1×1)                   = 8 cells
+ *                                       ─────────
+ *                                        20 cells = 5 rows × 4 cols  ✓ no orphan
  *
- * Mobile (default 2 columns) — wides become full-width, the tall stays
- * 1×2, singles stack 2-up. Math also lands on an even row count.
+ * Mobile (default 2 columns) — wides become full-width (col-span-2),
+ * the talls stay 1×2, singles stack 2-up. Math: 20 cells / 2 cols = 10 rows.
  */
 const tiles: Tile[] = [
   {
@@ -41,21 +41,22 @@ const tiles: Tile[] = [
     span: 'row-span-2 sm:row-span-2',
   },
   {
+    src: '/uploads/2025/12/Photo-Dec-11-2025-2-55-23-PM.jpg',
+    alt: 'Trophy lift',
+    span: 'row-span-2 sm:row-span-2',
+  },
+  {
     src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM-1.jpg',
     alt: 'Champion celebrating',
   },
   {
-    src: '/uploads/2025/12/Photo-Dec-11-2025-2-55-23-PM.jpg',
-    alt: 'Trophy lift',
+    src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM.jpg',
+    alt: 'Player with hardware',
   },
   {
     src: '/uploads/2025/12/Photo-Dec-11-2025-2-55-23-PM-3.jpg',
     alt: 'Awards podium moment',
     span: 'col-span-2 sm:col-span-2',
-  },
-  {
-    src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM.jpg',
-    alt: 'Player with hardware',
   },
   {
     src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM-2.jpg',
@@ -70,9 +71,17 @@ const tiles: Tile[] = [
     alt: 'Player with trophy',
   },
   {
+    src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM-5.jpg',
+    alt: 'Junior champion',
+    span: 'col-span-2 sm:col-span-2',
+  },
+  {
     src: '/uploads/2025/12/Photo-Dec-11-2025-2-55-23-PM-1.jpg',
     alt: 'Tournament victory',
-    span: 'col-span-2 sm:col-span-2',
+  },
+  {
+    src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM-6.jpg',
+    alt: 'Award-winning moment',
   },
   {
     src: '/uploads/2025/12/Photo-Dec-11-2025-2-48-00-PM-7.jpg',

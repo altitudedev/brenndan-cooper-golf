@@ -1,7 +1,8 @@
 'use client';
 
 import { AnimatePresence, motion, type PanInfo } from 'framer-motion';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export type LightboxImage = { src: string; alt: string; caption?: string };
 
@@ -15,6 +16,11 @@ type Props = {
 export default function Lightbox({ images, index, onClose, onChange }: Props) {
   const open = index !== null;
   const total = images.length;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const goNext = useCallback(() => {
     if (index === null) return;
@@ -50,7 +56,9 @@ export default function Lightbox({ images, index, onClose, onChange }: Props) {
 
   const current = index !== null ? images[index] : null;
 
-  return (
+  if (!mounted) return null;
+
+  const content = (
     <AnimatePresence>
       {open && current && (
         <motion.div
@@ -59,7 +67,7 @@ export default function Lightbox({ images, index, onClose, onChange }: Props) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
-          className="fixed inset-0 z-[200] flex items-center justify-center"
+          className="fixed inset-0 z-[300] flex items-center justify-center"
           aria-modal="true"
           role="dialog"
         >
@@ -194,4 +202,6 @@ export default function Lightbox({ images, index, onClose, onChange }: Props) {
       )}
     </AnimatePresence>
   );
+
+  return createPortal(content, document.body);
 }
