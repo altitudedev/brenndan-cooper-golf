@@ -9,7 +9,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         headline="Let’s Talk About Your Game"
         sub="Questions about programs, scheduling, or what coaching can do for you? Send a message and Brenndan or the team will get back to you."
-        image="/uploads/2025/12/Photo-Dec-11-2025-2-55-23-PM.jpg"
+        image="/uploads/2026/02/facility3.jpg"
         primaryCta={{ label: 'Book Now', href: site.bookNowUrl, external: true }}
       />
 
