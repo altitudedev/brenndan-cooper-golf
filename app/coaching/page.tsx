@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import Reveal from '@/components/Reveal';
 import Aurora from '@/components/Aurora';
 import Grain from '@/components/Grain';
+import Image from 'next/image';
 import Link from 'next/link';
 import { site } from '@/lib/site';
 
@@ -142,23 +143,56 @@ export default function CoachingPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
-          <h2 className="font-display text-3xl font-semibold uppercase tracking-tight text-navy-950 sm:text-5xl">
-            Start with an assessment.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-muted">
-            Every program starts with a Player & Game Assessment so we can set goals and build the right plan for you.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a href={site.bookNowUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
-              Book Now
-            </a>
-            <Link href="/contact" className="btn btn-outline">
-              Ask a Question
-            </Link>
-          </div>
+      {/* Full-height assessment CTA with background image */}
+      <section className="relative isolate flex min-h-[100svh] w-full items-center overflow-hidden bg-navy-950 text-white">
+        {/* Background image */}
+        <Image
+          src="/uploads/2026/02/facility2.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
+          className="opacity-55"
+        />
+        <Aurora tone="crimson" intensity={0.7} />
+        {/* Veil */}
+        <div
+          aria-hidden
+          className="absolute inset-0 z-[2]"
+          style={{
+            background:
+              'linear-gradient(220deg, rgba(7,34,59,0.78) 0%, rgba(4,22,39,0.82) 60%, rgba(4,22,39,0.92) 100%)',
+          }}
+        />
+        <Grain opacity={0.07} />
+        {/* Top curve so it tucks under the previous white section nicely */}
+        <svg
+          aria-hidden
+          viewBox="0 0 1000 60"
+          preserveAspectRatio="none"
+          className="absolute left-0 right-0 top-[-1px] z-[3] h-[50px] w-full fill-white"
+        >
+          <path d="M0,0v40C200,60,400,20,500,18C600,16,800,55,1000,40V0H0z" />
+        </svg>
+
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center sm:px-8">
+          <Reveal>
+            <div className="eyebrow">Step One</div>
+            <h2 className="mt-5 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-[88px]">
+              Start with an <span className="shimmer-text">assessment.</span>
+            </h2>
+            <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
+              Every program starts with a Player & Game Assessment so we can set goals and build the right plan for you.
+            </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <a href={site.bookNowUrl} target="_blank" rel="noreferrer" className="btn btn-primary glow-ring">
+                Book Now
+              </a>
+              <Link href="/contact" className="btn btn-ghost">
+                Ask a Question
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
