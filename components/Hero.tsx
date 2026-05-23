@@ -111,7 +111,7 @@ export default function Hero({
           align === 'center' && 'text-center',
         )}
       >
-        <div className={clsx('max-w-3xl pt-32 sm:pt-36', align === 'center' && 'mx-auto')}>
+        <div className={clsx('max-w-2xl pt-32 pb-28 sm:pt-36 sm:pb-32', align === 'center' && 'mx-auto')}>
           {eyebrow && (
             <div className="blur-up inline-flex items-center gap-3">
               <span className="block h-px w-8 bg-crimson" />

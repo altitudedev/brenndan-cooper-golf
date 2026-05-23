@@ -178,11 +178,7 @@ export default function HomePage() {
                 style={{ objectFit: 'cover' }}
                 className="transition-transform duration-[1500ms] ease-out group-hover:scale-[1.05]"
               />
-              {/* Floating chip */}
-              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-md animate-floaty">
-                <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
-                On the Lesson Tee
-              </div>
+
               {/* Stat overlay */}
               <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-2">
                 <div className="glass-dark rounded-xl px-3 py-2 text-xs text-white">
