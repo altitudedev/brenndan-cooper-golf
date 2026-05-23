@@ -63,7 +63,18 @@ export default function Hero({
       {/* Background photo with parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y: imageY, x: mouseX }}>
         <div className="absolute -inset-12">
-          <Image src={image} alt="" fill priority sizes="120vw" style={{ objectFit: 'cover' }} className="opacity-90" />
+          <Image 
+            src={image} 
+            alt="" 
+            fill 
+            priority 
+            sizes="120vw" 
+            style={{ 
+              objectFit: 'cover',
+              objectPosition: 'left center'
+            }} 
+            className="opacity-90" 
+          />
         </div>
       </motion.div>
 
